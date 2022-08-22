@@ -13,9 +13,9 @@ If your application contains PHP outside the webroot, you may define an alternat
 
 Available tags:
 
-1. 5.6
-2. 7.4
-3. 8.1
+- 5.6
+- 7.4
+- 8.1
 
 ** Composer
 
