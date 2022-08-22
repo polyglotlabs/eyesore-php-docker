@@ -26,7 +26,7 @@ RUN docker-php-ext-install \
 RUN	rm  -R /usr/src/
 
 ###############################################
-FROM eyesore/httpd:2.4.53 as release
+FROM eyesore/httpd:2.4.54 as release
 
 # ensure php runtime deps and create log dir
 RUN mkdir -p /usr/local/var/log/ && apk add --no-cache \
@@ -65,5 +65,9 @@ COPY --from=php /usr/local/bin/* /usr/local/bin/
 COPY --from=php /usr/local/sbin/* /usr/local/sbin/
 
 COPY custom-entrypoint /usr/local/bin
+COPY cfg/* /usr/local/apache2/conf/required.conf.d/
+
+# default webroot
+VOLUME /var/www/app
 
 ENTRYPOINT ["custom-entrypoint"]
