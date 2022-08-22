@@ -1,0 +1,8 @@
+* Eyesore PHP/httpd docker container
+
+This is docker container running both httpd (apache2) and php-fpm.
+
+The webserver is configured to serve PHP through php-fpm by default, and can be further extended by mounting configs into ~/usr/local/apache2/conf/conf.d~.
+
+The default webroot is ~/var/www/app~
+If your application contains PHP outside the webroot, you may define an alternate webroot and mount the configuration into the above directory.
