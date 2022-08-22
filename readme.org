@@ -6,3 +6,27 @@ The webserver is configured to serve PHP through php-fpm by default, and can be 
 
 The default webroot is ~/var/www/app~
 If your application contains PHP outside the webroot, you may define an alternate webroot and mount the configuration into the above directory.
+
+** Usage
+
+~docker pull eyesore/php-dev:latest~ for latest
+
+Available tags:
+
+1. 5.6
+2. 7.4
+3. 8.1
+
+** Composer
+
+Composer is available as a binary (~/usr/local/bin/composer~) in this image.
+
+Example usage:
+
+#+begin_src bash
+  docker run --rm -ti \
+	   --entrypoint /usr/local/bin/composer \
+	   -v $(pwd):/app \
+	   --user $(id -u):$(id -g) \
+	   eyesore/php-dev install
+#+end_src

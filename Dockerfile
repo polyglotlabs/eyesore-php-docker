@@ -40,6 +40,7 @@ COPY --from=php /usr/local/lib/php /usr/local/lib/php
 COPY --from=php /usr/local/etc/ /usr/local/etc/
 COPY --from=php /usr/local/bin/* /usr/local/bin/
 COPY --from=php /usr/local/sbin/* /usr/local/sbin/
+
 COPY --from=composer:2.4 /usr/bin/composer /usr/local/bin/composer
 
 COPY custom-entrypoint /usr/local/bin
